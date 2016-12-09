@@ -1,0 +1,31 @@
+br
+h4 评论区
+.commentsarea
+  p.commentslength 共#{post.comments.length}条评论
+  - post.comments.forEach(function (comment, index) {
+      .comments
+        p #{index + 1}楼
+        a(href="#{comment.website}") #{comment.name}
+        span  回复于#{comment.time}
+        p!=  comment.content
+  - })
+h4 发表评论
+form(method="post" id="comment" action="/oneArticle/#{post.name}/#{post.time.day}/#{post.title}")
+  - if (user)
+    label(for="name") 姓名
+    input.form-control(type="text" name="name" value="#{user.name}")
+    label(for="email") 邮箱
+    input.form-control(type="text" name="email" value="#{user.email}")
+    label(for="website") 网址
+    input.form-control(type="text" name="website" value="/userarticle/#{user.name}")
+  - else
+    label(for="name") 姓名
+    input.form-control(type="text" name="name")
+    label(for="email") 邮箱
+    input.form-control(type="text" name="email")
+    label(for="website") 网址
+    input.form-control(type="text" name="website" value="http://")
+  label(for="cpntent") 评论  
+  textarea.form-control(name="content" rows="5")
+  br
+  input.form-control.btn.btn-primary(type="submit" value="提交")

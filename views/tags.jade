@@ -1,0 +1,8 @@
+extends layout
+block content
+  link(rel='stylesheet', href='/stylesheets/article.css')
+  .content.col-md-10.col-md-offset-1
+    .alllabel
+      h3.head-text 所有标签
+      - for tag in posts
+        a.tag(href="/tags/#{tag}") #{tag}

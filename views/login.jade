@@ -1,0 +1,18 @@
+extends layout
+
+block content     
+    link(rel='stylesheet', href='/stylesheets/login.css')
+    section.loginSection.col-md-12
+      section.col-md-4.col-md-offset-7.login-panel
+        .panel.panel-default
+          .panel-heading 用户登录             
+          .panel-body
+            form(method='post')
+              .form-group
+                label(for='username') 用户名                        
+                input#username.form-control(type='text', name='username')                            
+                p.help-block 你的账户名称，用户登录和提示                
+              .form-group
+                label(for='password') 密码
+                input#password.form-control(type='password', name='password')                                             
+              button.btn.btn-primary(type='submit') 登录

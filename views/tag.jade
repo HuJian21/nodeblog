@@ -1,0 +1,14 @@
+extends layout
+block content
+  link(rel='stylesheet', href='/stylesheets/article.css')
+  .content.col-md-10.col-md-offset-1
+    ul.archive
+      - var lastYear = 0
+      - for post in posts
+        - if (lastYear != post.time.year)
+          li.tagyear
+            h3 #{post.time.year}年
+        - lastYear = post.time.year
+          li.tagtimeday 
+            time #{post.time.day}
+            a(href="/onearticle/#{post.name}/#{post.time.day}/#{post.title}") #{post.title}

@@ -1,0 +1,42 @@
+body, h1, h2, h3, ul, ol, p, section {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+a:link, a:visited {
+  text-decoration: none; }
+
+a:hover, a:active {
+  text-decoration: none; }
+
+.clearfix {
+  zoom: 1; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.loginSection {
+  background-image: url("../images/bg.jpg");
+  height: 554px; }
+  .loginSection .login-panel {
+    margin-top: 120px;
+    margin-bottom: 120px; }
+  .loginSection .reg-panel {
+    margin-top: 90px;
+    margin-bottom: 90px; }
+
+.article {
+  margin-top: 20px; }
+
+/*# sourceMappingURL=login.css.map */

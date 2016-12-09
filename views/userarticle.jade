@@ -1,0 +1,27 @@
+extends layout
+block content
+  link(rel='stylesheet', href='/stylesheets/article.css')
+  .content.col-md-10.col-md-offset-1
+    h3.head-text #{posts[0].name}的文章
+    - for post in posts
+      .articles.clear
+        .article.bg-info
+          - if (post.title)
+            h3
+              a(href="/onearticle/#{post.name}/#{post.time.day}/#{post.title}")= post.title
+          - else
+            h3
+              a(href="/onearticle/#{post.name}/#{post.time.day}/#{post.title}") 无标题
+          p.author-time
+            span.article-author 作者：
+              a(href="/userarticle/#{post.name}") #{post.name}
+            span.article-time 日期: 
+              a #{post.time.minute}
+            span.article-tags 标签:
+              - var tags = post.tags
+              - for tag in tags
+                - if (tag)
+                  a.tag(href="/tags/#{tag}") #{tag}
+          .post.article-content!= post.post
+            a.article-readall(href="/onearticle/#{post.name}/#{post.time.day}/#{post.title}") 阅读全文
+    include ./paging.jade

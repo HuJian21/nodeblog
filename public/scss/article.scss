@@ -1,0 +1,100 @@
+@import '_reset.scss';
+.content{
+    .head-text {
+        margin-bottom: 20px;
+    }
+    .article {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        h3 {
+            margin-bottom: 20px;
+        }
+        .author-time {
+            margin-bottom: 20px;
+            .article-author {
+                margin-right: 20px;
+            }
+        }
+        .content-update {
+            margin-bottom: 20px;
+            a {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+#comment {
+    background-color: RGB(217,237,247);
+    border-radius: 5px;
+    padding: 20px 30px;
+}
+.comments {
+    background-color: RGB(247,247,247);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.article-content {
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.article-readall {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+}
+.article-tags {
+    margin-left: 20px;
+}
+.alllabel {
+    text-align: center;
+}
+.tag {
+        margin-right: 10px;
+        border-radius: 5px; 
+        background-color: #168EF0;
+        padding: 8px;
+        color: white;
+        &:hover {
+            background-color: #F60;
+            color: white;
+        }
+    }
+.archive {
+    text-align: center;
+    background-color: #4693EC;
+    .tagyear {
+        h3 {
+            font-weight: bold;
+        }
+    }
+    .tagtimeday {
+        margin-top: 10px;
+        time {
+            // color: #999999;
+            color: white;
+        }
+        a:link, a:visited {
+            margin-left: 20px;
+            color: white;
+        }
+        a:hover, a:active {
+            color: mediumvioletred;
+            text-decoration: underline;
+        }
+    }
+}
+.commentsarea {
+    background-color: #D9EDF7;
+    border-radius: 5px;
+    padding: 20px;
+}
+.commentslength {
+    margin-bottom: 20px;
+}
+.article-text {
+    line-height: 1.8;
+}

@@ -1,0 +1,23 @@
+extends layout
+
+block content     
+  link(rel='stylesheet', href='/stylesheets/login.css')
+  //- script(src='/javascripts/jquery-2.1.4.js')
+  //- script(src='/javascripts/edit.js')
+  script.
+    console.log('11s')
+  form.col-md-10.col-md-offset-1(method="post" action="/edit/#{post.name}/#{post.time.day}/#{post.title}").article
+    .form-group
+      label(for="article-title") 文章标题:
+      input.form-control.article-title(type="text", name="title" value="#{post.title}")
+    .form-group
+      label(for="article-title") 标签:
+      input.col-md-4(type="text", name="tag1" value="#{post.tags[0]}")
+      input.col-md-4(type="text", name="tag2" value="#{post.tags[1]}")
+      input.col-md-4(type="text", name="tag3" value="#{post.tags[2]}")
+    .form-group
+      label(for="article-content") 文章内容:
+      <textarea class="form-control article-content" rows="19" name="post">#{post.post}</textarea>
+    .form-group.pull-right
+      input.submit.btn.btn-primary(type="submit" value="保存修改")
+

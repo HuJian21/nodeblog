@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  div.jumbotron.welcome
+    h1 欢迎来到我的Node.js博客
+    p 这是一个基于Node.js的博客系统。
+    - if (user)
+      p.buttons
+        span.welcome-message 欢迎您，#{user.name} ！
+        a.btn.btn-primary(href="/post" role="button") 发表
+        a.btn.btn-default(href="/logout" role="button") 登出
+    - else
+      p.buttons
+        a.btn.btn-primary(href="/login" role="button") 登录
+        a.btn.btn-default(href="/reg" role="button") 立即注册
+  .says
+    .say 
+      h2 雨果：
+      p 在夜之胜典充当神秘之王，天空专为我而张灯结彩！
+    .say
+      h2 陀思妥耶夫斯基：
+      p 
+        | 《罪与罚》</br>
+        | 《白痴》</br>
+        | 《被侮辱与被损害的》</br>
+        | 《卡拉马佐夫兄弟》</br>
+    .say
+      h2 弥尔顿：
+      p 
+        | 九天之上的圣灵啊，当着那样一些形形色色的神殿，
+        | 你其实更喜欢那些有着纯洁而正直之心的人们。
+  .clearfix
